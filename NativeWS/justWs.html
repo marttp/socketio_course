@@ -1,0 +1,15 @@
+<script>
+    let ws = new WebSocket('ws://localhost:8000');
+    // Contain socket server data
+    console.log(ws);
+
+    ws.onopen = (event) => {
+        // This line will show to the server side of socket server
+        ws.send('I am so excited I am connected! It is like Christmas!');
+    }
+
+    // received message from server
+    ws.onmessage = (event) => {
+        console.log(event);
+    }
+</script>
